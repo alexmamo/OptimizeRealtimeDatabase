@@ -65,5 +65,5 @@ dependencies {
     implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose_version"
     //Firebase
     implementation platform("com.google.firebase:firebase-bom:$firebase_bom_version")
-    implementation "com.google.firebase:firebase-database"
+    implementation "com.google.firebase:firebase-database-ktx"
 }
