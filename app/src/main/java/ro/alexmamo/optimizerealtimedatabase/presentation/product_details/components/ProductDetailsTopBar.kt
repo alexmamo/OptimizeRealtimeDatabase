@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.product_details.componenta
+package ro.alexmamo.optimizerealtimedatabase.presentation.product_details.components
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton

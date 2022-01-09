@@ -19,7 +19,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.TAG
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.*
 import ro.alexmamo.optimizerealtimedatabase.presentation.components.ProgressBar
-import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.componenta.ProductDetailsTopBar
+import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.components.ProductDetailsTopBar
 
 @Composable
 @InternalCoroutinesApi
