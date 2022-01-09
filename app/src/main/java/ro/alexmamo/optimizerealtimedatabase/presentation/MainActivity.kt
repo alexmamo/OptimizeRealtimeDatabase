@@ -7,7 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
-import ro.alexmamo.optimizerealtimedatabase.presentation.util.NavGraph
+import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.NavGraph
 
 @AndroidEntryPoint
 @InternalCoroutinesApi

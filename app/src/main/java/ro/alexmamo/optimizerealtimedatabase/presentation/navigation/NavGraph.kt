@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.util
+package ro.alexmamo.optimizerealtimedatabase.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
@@ -11,8 +11,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.util.Screen.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.util.Screen.ProductNamesScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductDetailsScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductNamesScreen
 
 @Composable
 @InternalCoroutinesApi

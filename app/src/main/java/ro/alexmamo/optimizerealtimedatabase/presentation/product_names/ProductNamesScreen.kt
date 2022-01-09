@@ -17,7 +17,7 @@ import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.*
 import ro.alexmamo.optimizerealtimedatabase.presentation.components.ProgressBar
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.components.ProductNameCard
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.components.ProductNamesTopBar
-import ro.alexmamo.optimizerealtimedatabase.presentation.util.Screen.ProductDetailsScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductDetailsScreen
 
 @Composable
 @InternalCoroutinesApi

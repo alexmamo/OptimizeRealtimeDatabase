@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.util
+package ro.alexmamo.optimizerealtimedatabase.presentation.navigation
 
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_DETAILS_SCREEN
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_NAMES_SCREEN
