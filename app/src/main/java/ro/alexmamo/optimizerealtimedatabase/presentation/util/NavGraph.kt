@@ -17,7 +17,7 @@ import ro.alexmamo.optimizerealtimedatabase.presentation.util.Screen.ProductName
 @Composable
 @InternalCoroutinesApi
 @ExperimentalCoroutinesApi
-fun AppNavGraph (
+fun NavGraph (
     navController: NavHostController
 ) {
     NavHost(
