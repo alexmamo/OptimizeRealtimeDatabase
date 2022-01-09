@@ -1,0 +1,49 @@
+package ro.alexmamo.optimizerealtimedatabase.presentation.util
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.InternalCoroutinesApi
+import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.util.Screen.ProductDetailsScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.util.Screen.ProductNamesScreen
+
+@Composable
+@InternalCoroutinesApi
+@ExperimentalCoroutinesApi
+fun AppNavGraph (
+    navController: NavHostController
+) {
+    NavHost(
+        navController = navController,
+        startDestination = ProductNamesScreen.route
+    ) {
+        composable(
+            route = ProductNamesScreen.route
+        ) {
+            ProductNamesScreen(
+                navController = navController
+            )
+        }
+        composable(
+            route = ProductDetailsScreen.route + "/{productId}",
+            arguments = mutableStateListOf(
+                navArgument("productId") {
+                    type = NavType.StringType
+                }
+            )
+        ) { backStackEntry ->
+            val productId = backStackEntry.arguments?.getString("productId") ?: ""
+            ProductDetailsScreen(
+                navController = navController,
+                productId = productId
+            )
+        }
+    }
+}
