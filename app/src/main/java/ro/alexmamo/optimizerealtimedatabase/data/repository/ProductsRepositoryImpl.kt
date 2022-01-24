@@ -4,7 +4,6 @@ import com.google.firebase.database.DatabaseReference
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
-import ro.alexmamo.optimizerealtimedatabase.core.Constants.ERROR_MESSAGE
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCTS
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_NAMES
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Product
@@ -32,7 +31,7 @@ class ProductsRepositoryImpl @Inject constructor(
             }
             emit(Success(products))
         } catch (e: Exception) {
-            emit(Error(e.message ?: ERROR_MESSAGE))
+            emit(Error(e.message ?: e.toString()))
         }
     }
 
@@ -44,7 +43,7 @@ class ProductsRepositoryImpl @Inject constructor(
                 emit(Success(product))
             }
         } catch (e: Exception) {
-            emit(Error(e.message ?: ERROR_MESSAGE))
+            emit(Error(e.message ?: e.toString()))
         }
     }
 }
