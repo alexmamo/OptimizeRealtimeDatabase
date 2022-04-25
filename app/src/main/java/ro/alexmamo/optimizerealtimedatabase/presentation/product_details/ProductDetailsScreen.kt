@@ -1,5 +1,6 @@
 package ro.alexmamo.optimizerealtimedatabase.presentation.product_details
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,6 +25,7 @@ import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.compone
 @Composable
 @InternalCoroutinesApi
 @ExperimentalCoroutinesApi
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 fun ProductDetailsScreen(
     navController: NavController,
     productId: String,
