@@ -8,11 +8,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import kotlinx.coroutines.InternalCoroutinesApi
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_DETAILS_SCREEN
 
 @Composable
-@InternalCoroutinesApi
 fun ProductDetailsTopBar(
     navController: NavController
 ) {

@@ -13,13 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.InternalCoroutinesApi
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Product
 
 @Composable
-@InternalCoroutinesApi
-@ExperimentalCoroutinesApi
 fun ProductNameCard(
     product: Product,
     onProductClick: (Product) -> Unit

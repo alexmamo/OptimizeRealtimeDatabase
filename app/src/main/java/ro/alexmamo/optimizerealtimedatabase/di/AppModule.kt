@@ -1,12 +1,12 @@
 package ro.alexmamo.optimizerealtimedatabase.di
 
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import ro.alexmamo.optimizerealtimedatabase.data.repository.ProductsRepositoryImpl
 import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductsRepository
 import ro.alexmamo.optimizerealtimedatabase.domain.use_case.GetProductById
@@ -14,11 +14,10 @@ import ro.alexmamo.optimizerealtimedatabase.domain.use_case.GetProducts
 import ro.alexmamo.optimizerealtimedatabase.domain.use_case.UseCases
 
 @Module
-@ExperimentalCoroutinesApi
 @InstallIn(SingletonComponent::class)
 class AppModule {
     @Provides
-    fun provideFirebaseDatabaseReference() = FirebaseDatabase.getInstance().reference
+    fun provideFirebaseDatabaseReference() = Firebase.database.reference
 
     @Provides
     fun provideProductsRepository(
@@ -26,8 +25,10 @@ class AppModule {
     ): ProductsRepository = ProductsRepositoryImpl(db)
 
     @Provides
-    fun provideUseCases(repository: ProductsRepository) = UseCases(
-        getProducts = GetProducts(repository = repository),
-        getProductById = GetProductById(repository = repository)
+    fun provideUseCases(
+        repo: ProductsRepository
+    ) = UseCases(
+        getProducts = GetProducts(repo = repo),
+        getProductById = GetProductById(repo = repo)
     )
 }

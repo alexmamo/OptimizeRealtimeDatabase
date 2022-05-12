@@ -8,6 +8,21 @@ object Constants {
     const val PRODUCT_NAMES = "productNames"
     const val PRODUCTS = "products"
 
+    //Product fields
+    const val NAME = "name"
+    const val IMAGE_URL = "imageUrl"
+    const val DETAILS = "details"
+    const val PRICE = "price"
+    const val STOCK = "stock"
+    const val HEIGHT = "height"
+    const val WIDTH = "width"
+    const val DEPTH = "depth"
+    const val WEIGHT = "weight"
+
+    //Measurement units
+    const val CM = "cm"
+    const val KG = "Kg"
+
     //Screens
     const val PRODUCT_NAMES_SCREEN = "Products"
     const val PRODUCT_DETAILS_SCREEN = "Product Details"

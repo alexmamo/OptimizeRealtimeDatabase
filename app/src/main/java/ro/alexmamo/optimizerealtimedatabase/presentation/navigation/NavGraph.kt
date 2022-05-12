@@ -7,16 +7,12 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.InternalCoroutinesApi
-import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductDetailsScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductNamesScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesScreen
 
 @Composable
-@InternalCoroutinesApi
-@ExperimentalCoroutinesApi
 fun NavGraph (
     navController: NavHostController
 ) {

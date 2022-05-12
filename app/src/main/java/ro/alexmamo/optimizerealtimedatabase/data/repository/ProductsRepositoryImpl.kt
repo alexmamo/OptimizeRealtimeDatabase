@@ -1,7 +1,6 @@
 package ro.alexmamo.optimizerealtimedatabase.data.repository
 
 import com.google.firebase.database.DatabaseReference
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCTS
@@ -13,7 +12,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-@ExperimentalCoroutinesApi
 class ProductsRepositoryImpl @Inject constructor(
     private val db: DatabaseReference
 ): ProductsRepository {
