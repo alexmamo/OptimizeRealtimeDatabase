@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.CM
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.DEPTH
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.DETAILS
@@ -32,16 +31,18 @@ import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.compone
 
 @Composable
 fun ProductDetailsScreen(
-    navController: NavController,
+    viewModel: ProductDetailsViewModel = hiltViewModel(),
     productId: String,
-    viewModel: ProductDetailsViewModel = hiltViewModel()
+    navigateToProductNamesScreen: () -> Unit
 ) {
     LaunchedEffect(Unit) {
         viewModel.getProductById(productId)
     }
     Scaffold(
         topBar = {
-            ProductDetailsTopBar(navController)
+            ProductDetailsTopBar(
+                navigateToProductNamesScreen = navigateToProductNamesScreen
+            )
         },
         content = { padding ->
             Box(

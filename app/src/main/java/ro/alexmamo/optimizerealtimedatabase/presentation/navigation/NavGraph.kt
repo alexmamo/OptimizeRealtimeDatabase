@@ -3,7 +3,7 @@ package ro.alexmamo.optimizerealtimedatabase.presentation.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
+import androidx.navigation.NavType.Companion.StringType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
@@ -24,21 +24,25 @@ fun NavGraph (
             route = ProductNamesScreen.route
         ) {
             ProductNamesScreen(
-                navController = navController
+                navigateToProductDetails = { productKey ->
+                    navController.navigate(ProductDetailsScreen.route + "/${productKey}")
+                }
             )
         }
         composable(
             route = ProductDetailsScreen.route + "/{productId}",
             arguments = mutableStateListOf(
                 navArgument("productId") {
-                    type = NavType.StringType
+                    type = StringType
                 }
             )
         ) { backStackEntry ->
             val productId = backStackEntry.arguments?.getString("productId") ?: ""
             ProductDetailsScreen(
-                navController = navController,
-                productId = productId
+                productId = productId,
+                navigateToProductNamesScreen = {
+                    navController.popBackStack()
+                }
             )
         }
     }

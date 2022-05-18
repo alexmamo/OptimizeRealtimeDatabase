@@ -9,18 +9,16 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.TAG
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.*
 import ro.alexmamo.optimizerealtimedatabase.presentation.components.ProgressBar
-import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductDetailsScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.components.ProductNameCard
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.components.ProductNamesTopBar
 
 @Composable
 fun ProductNamesScreen(
-    navController: NavController,
-    viewModel: ProductNamesViewModel = hiltViewModel()
+    viewModel: ProductNamesViewModel = hiltViewModel(),
+    navigateToProductDetails: (productKey: String) -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -38,7 +36,9 @@ fun ProductNamesScreen(
                         ProductNameCard(
                             product = product,
                             onProductClick = {
-                                navController.navigate(ProductDetailsScreen.route + "/${product.key}")
+                                product.key?.let { productKey ->
+                                    navigateToProductDetails(productKey)
+                                }
                             }
                         )
                     }

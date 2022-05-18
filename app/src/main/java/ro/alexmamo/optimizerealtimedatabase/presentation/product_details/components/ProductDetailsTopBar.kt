@@ -7,12 +7,11 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_DETAILS_SCREEN
 
 @Composable
 fun ProductDetailsTopBar(
-    navController: NavController
+    navigateToProductNamesScreen: () -> Unit
 ) {
     TopAppBar (
         title = {
@@ -23,7 +22,7 @@ fun ProductDetailsTopBar(
         navigationIcon = {
             IconButton(
                 onClick = {
-                    navController.popBackStack()
+                    navigateToProductNamesScreen()
                 }
             ) {
                 Icon(
