@@ -20,11 +20,9 @@ class ProductDetailsViewModel @Inject constructor(
     private val _productState = mutableStateOf<Response<Product>>(Success(Product()))
     val productState: State<Response<Product>> = _productState
 
-    fun getProductById(id: String) {
-        viewModelScope.launch {
-            useCases.getProductById(id).collect { response ->
-                _productState.value = response
-            }
+    fun getProductById(id: String) = viewModelScope.launch {
+        useCases.getProductById(id).collect { response ->
+            _productState.value = response
         }
     }
 }
