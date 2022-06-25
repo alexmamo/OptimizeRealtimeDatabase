@@ -38,6 +38,7 @@ fun ProductDetailsScreen(
     LaunchedEffect(Unit) {
         viewModel.getProductById(productId)
     }
+
     Scaffold(
         topBar = {
             ProductDetailsTopBar(
