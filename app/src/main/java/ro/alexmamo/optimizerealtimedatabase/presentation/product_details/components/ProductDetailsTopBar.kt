@@ -21,9 +21,7 @@ fun ProductDetailsTopBar(
         },
         navigationIcon = {
             IconButton(
-                onClick = {
-                    navigateToProductNamesScreen()
-                }
+                onClick = navigateToProductNamesScreen
             ) {
                 Icon(
                     imageVector = Icons.Outlined.ArrowBack,

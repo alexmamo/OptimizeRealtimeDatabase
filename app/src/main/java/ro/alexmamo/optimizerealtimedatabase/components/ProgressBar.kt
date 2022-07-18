@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.components
+package ro.alexmamo.optimizerealtimedatabase.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.navigation
+package ro.alexmamo.optimizerealtimedatabase.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
@@ -7,8 +7,8 @@ import androidx.navigation.NavType.Companion.StringType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.Screen.ProductNamesScreen
+import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductDetailsScreen
+import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductNamesScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesScreen
 
@@ -25,21 +25,21 @@ fun NavGraph (
         ) {
             ProductNamesScreen(
                 navigateToProductDetails = { productKey ->
-                    navController.navigate(ProductDetailsScreen.route + "/${productKey}")
+                    navController.navigate("${ProductDetailsScreen.route}/${productKey}")
                 }
             )
         }
         composable(
-            route = ProductDetailsScreen.route + "/{productId}",
+            route = "${ProductDetailsScreen.route}/{productKey}",
             arguments = mutableStateListOf(
-                navArgument("productId") {
+                navArgument("productKey") {
                     type = StringType
                 }
             )
         ) { backStackEntry ->
-            val productId = backStackEntry.arguments?.getString("productId") ?: ""
+            val productKey = backStackEntry.arguments?.getString("productKey") ?: ""
             ProductDetailsScreen(
-                productId = productId,
+                productKey = productKey,
                 navigateToProductNamesScreen = {
                     navController.popBackStack()
                 }

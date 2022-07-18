@@ -5,7 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import ro.alexmamo.optimizerealtimedatabase.presentation.navigation.NavGraph
+import ro.alexmamo.optimizerealtimedatabase.navigation.NavGraph
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
