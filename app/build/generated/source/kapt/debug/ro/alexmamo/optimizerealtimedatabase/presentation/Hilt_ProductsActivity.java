@@ -16,19 +16,19 @@ import javax.annotation.processing.Generated;
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
 @Generated("dagger.hilt.android.processor.internal.androidentrypoint.ActivityGenerator")
-public abstract class Hilt_MainActivity extends AppCompatActivity implements GeneratedComponentManagerHolder {
+public abstract class Hilt_ProductsActivity extends AppCompatActivity implements GeneratedComponentManagerHolder {
   private volatile ActivityComponentManager componentManager;
 
   private final Object componentManagerLock = new Object();
 
   private boolean injected = false;
 
-  Hilt_MainActivity() {
+  Hilt_ProductsActivity() {
     super();
     _initHiltInternal();
   }
 
-  Hilt_MainActivity(int contentLayoutId) {
+  Hilt_ProductsActivity(int contentLayoutId) {
     super(contentLayoutId);
     _initHiltInternal();
   }
@@ -66,7 +66,7 @@ public abstract class Hilt_MainActivity extends AppCompatActivity implements Gen
   protected void inject() {
     if (!injected) {
       injected = true;
-      ((MainActivity_GeneratedInjector) this.generatedComponent()).injectMainActivity(UnsafeCasts.<MainActivity>unsafeCast(this));
+      ((ProductsActivity_GeneratedInjector) this.generatedComponent()).injectProductsActivity(UnsafeCasts.<ProductsActivity>unsafeCast(this));
     }
   }
 

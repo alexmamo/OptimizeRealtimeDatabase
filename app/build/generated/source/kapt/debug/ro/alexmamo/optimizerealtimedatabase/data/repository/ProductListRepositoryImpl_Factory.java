@@ -19,23 +19,23 @@ import javax.inject.Provider;
     "unchecked",
     "rawtypes"
 })
-public final class ProductsRepositoryImpl_Factory implements Factory<ProductsRepositoryImpl> {
+public final class ProductListRepositoryImpl_Factory implements Factory<ProductListRepositoryImpl> {
   private final Provider<DatabaseReference> dbProvider;
 
-  public ProductsRepositoryImpl_Factory(Provider<DatabaseReference> dbProvider) {
+  public ProductListRepositoryImpl_Factory(Provider<DatabaseReference> dbProvider) {
     this.dbProvider = dbProvider;
   }
 
   @Override
-  public ProductsRepositoryImpl get() {
+  public ProductListRepositoryImpl get() {
     return newInstance(dbProvider.get());
   }
 
-  public static ProductsRepositoryImpl_Factory create(Provider<DatabaseReference> dbProvider) {
-    return new ProductsRepositoryImpl_Factory(dbProvider);
+  public static ProductListRepositoryImpl_Factory create(Provider<DatabaseReference> dbProvider) {
+    return new ProductListRepositoryImpl_Factory(dbProvider);
   }
 
-  public static ProductsRepositoryImpl newInstance(DatabaseReference db) {
-    return new ProductsRepositoryImpl(db);
+  public static ProductListRepositoryImpl newInstance(DatabaseReference db) {
+    return new ProductListRepositoryImpl(db);
   }
 }

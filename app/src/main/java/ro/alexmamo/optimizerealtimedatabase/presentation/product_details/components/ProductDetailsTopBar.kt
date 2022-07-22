@@ -11,7 +11,7 @@ import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_DETAILS_SCREE
 
 @Composable
 fun ProductDetailsTopBar(
-    navigateToProductNamesScreen: () -> Unit
+    navigateBack: () -> Unit
 ) {
     TopAppBar (
         title = {
@@ -21,7 +21,7 @@ fun ProductDetailsTopBar(
         },
         navigationIcon = {
             IconButton(
-                onClick = navigateToProductNamesScreen
+                onClick = navigateBack
             ) {
                 Icon(
                     imageVector = Icons.Outlined.ArrowBack,

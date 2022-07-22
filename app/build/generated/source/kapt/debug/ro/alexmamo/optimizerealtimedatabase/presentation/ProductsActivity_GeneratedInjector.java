@@ -7,11 +7,11 @@ import dagger.hilt.internal.GeneratedEntryPoint;
 import javax.annotation.processing.Generated;
 
 @OriginatingElement(
-    topLevelClass = MainActivity.class
+    topLevelClass = ProductsActivity.class
 )
 @GeneratedEntryPoint
 @InstallIn(ActivityComponent.class)
 @Generated("dagger.hilt.android.processor.internal.androidentrypoint.InjectorEntryPointGenerator")
-public interface MainActivity_GeneratedInjector {
-  void injectMainActivity(MainActivity mainActivity);
+public interface ProductsActivity_GeneratedInjector {
+  void injectProductsActivity(ProductsActivity productsActivity);
 }

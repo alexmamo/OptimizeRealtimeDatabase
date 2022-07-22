@@ -7,15 +7,15 @@ import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCTS
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_NAMES
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Product
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.*
-import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductsRepository
+import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductListRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ProductsRepositoryImpl @Inject constructor(
+class ProductListRepositoryImpl @Inject constructor(
     private val db: DatabaseReference
-): ProductsRepository {
-    override suspend fun getProducts()  = flow {
+): ProductListRepository {
+    override suspend fun getProductListFromRealtimeDatabase()  = flow {
         try {
             emit(Loading)
             val products = mutableListOf<Product>()
@@ -33,10 +33,11 @@ class ProductsRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getProductById(id: String) = flow {
+    override suspend fun getProductDetailsFromRealtimeDatabase(productKey: String) = flow {
         try {
             emit(Loading)
-            val product = db.child(PRODUCTS).child(id).get().await().getValue(Product::class.java)
+            val productKeyRef = db.child(PRODUCTS).child(productKey)
+            val product = productKeyRef.get().await().getValue(Product::class.java)
             product?.let {
                 emit(Success(product))
             }

@@ -8,18 +8,18 @@ import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.compone
 @Composable
 fun ProductDetailsScreen(
     productKey: String,
-    navigateToProductNamesScreen: () -> Unit
+    navigateBack: () -> Unit
 ) {
     Scaffold(
         topBar = {
             ProductDetailsTopBar(
-                navigateToProductNamesScreen = navigateToProductNamesScreen
+                navigateBack = navigateBack
             )
         },
         content = { padding ->
             ProductDetailsContent(
                 padding = padding,
-                productId = productKey
+                productKey = productKey
             )
         }
     )

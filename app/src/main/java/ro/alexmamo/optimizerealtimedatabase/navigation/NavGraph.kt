@@ -1,5 +1,6 @@
 package ro.alexmamo.optimizerealtimedatabase.navigation
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.navigation.NavHostController
@@ -8,22 +9,23 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductNamesScreen
+import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductListScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.product_list.ProductListScreen
 
 @Composable
+@ExperimentalMaterialApi
 fun NavGraph (
     navController: NavHostController
 ) {
     NavHost(
         navController = navController,
-        startDestination = ProductNamesScreen.route
+        startDestination = ProductListScreen.route
     ) {
         composable(
-            route = ProductNamesScreen.route
+            route = ProductListScreen.route
         ) {
-            ProductNamesScreen(
+            ProductListScreen(
                 navigateToProductDetails = { productKey ->
                     navController.navigate("${ProductDetailsScreen.route}/${productKey}")
                 }
@@ -40,7 +42,7 @@ fun NavGraph (
             val productKey = backStackEntry.arguments?.getString("productKey") ?: ""
             ProductDetailsScreen(
                 productKey = productKey,
-                navigateToProductNamesScreen = {
+                navigateBack = {
                     navController.popBackStack()
                 }
             )

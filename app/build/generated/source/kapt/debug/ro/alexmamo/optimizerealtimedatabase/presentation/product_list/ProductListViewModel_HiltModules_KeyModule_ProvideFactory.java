@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.product_names;
+package ro.alexmamo.optimizerealtimedatabase.presentation.product_list;
 
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
@@ -18,21 +18,21 @@ import javax.annotation.processing.Generated;
     "unchecked",
     "rawtypes"
 })
-public final class ProductNamesViewModel_HiltModules_KeyModule_ProvideFactory implements Factory<String> {
+public final class ProductListViewModel_HiltModules_KeyModule_ProvideFactory implements Factory<String> {
   @Override
   public String get() {
     return provide();
   }
 
-  public static ProductNamesViewModel_HiltModules_KeyModule_ProvideFactory create() {
+  public static ProductListViewModel_HiltModules_KeyModule_ProvideFactory create() {
     return InstanceHolder.INSTANCE;
   }
 
   public static String provide() {
-    return Preconditions.checkNotNullFromProvides(ProductNamesViewModel_HiltModules.KeyModule.provide());
+    return Preconditions.checkNotNullFromProvides(ProductListViewModel_HiltModules.KeyModule.provide());
   }
 
   private static final class InstanceHolder {
-    private static final ProductNamesViewModel_HiltModules_KeyModule_ProvideFactory INSTANCE = new ProductNamesViewModel_HiltModules_KeyModule_ProvideFactory();
+    private static final ProductListViewModel_HiltModules_KeyModule_ProvideFactory INSTANCE = new ProductListViewModel_HiltModules_KeyModule_ProvideFactory();
   }
 }

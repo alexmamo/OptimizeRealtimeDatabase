@@ -8,7 +8,7 @@ import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
-import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductsRepository;
+import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductListRepository;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -21,29 +21,29 @@ import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductsRepository
     "unchecked",
     "rawtypes"
 })
-public final class AppModule_ProvideProductsRepositoryFactory implements Factory<ProductsRepository> {
+public final class AppModule_ProvideProductListRepositoryFactory implements Factory<ProductListRepository> {
   private final AppModule module;
 
   private final Provider<DatabaseReference> dbProvider;
 
-  public AppModule_ProvideProductsRepositoryFactory(AppModule module,
+  public AppModule_ProvideProductListRepositoryFactory(AppModule module,
       Provider<DatabaseReference> dbProvider) {
     this.module = module;
     this.dbProvider = dbProvider;
   }
 
   @Override
-  public ProductsRepository get() {
-    return provideProductsRepository(module, dbProvider.get());
+  public ProductListRepository get() {
+    return provideProductListRepository(module, dbProvider.get());
   }
 
-  public static AppModule_ProvideProductsRepositoryFactory create(AppModule module,
+  public static AppModule_ProvideProductListRepositoryFactory create(AppModule module,
       Provider<DatabaseReference> dbProvider) {
-    return new AppModule_ProvideProductsRepositoryFactory(module, dbProvider);
+    return new AppModule_ProvideProductListRepositoryFactory(module, dbProvider);
   }
 
-  public static ProductsRepository provideProductsRepository(AppModule instance,
+  public static ProductListRepository provideProductListRepository(AppModule instance,
       DatabaseReference db) {
-    return Preconditions.checkNotNullFromProvides(instance.provideProductsRepository(db));
+    return Preconditions.checkNotNullFromProvides(instance.provideProductListRepository(db));
   }
 }

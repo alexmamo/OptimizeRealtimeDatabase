@@ -24,6 +24,6 @@ object Constants {
     const val KG = "Kg"
 
     //Screens
-    const val PRODUCT_NAMES_SCREEN = "Products"
+    const val PRODUCT_LIST_SCREEN = "Product List"
     const val PRODUCT_DETAILS_SCREEN = "Product Details"
 }

@@ -7,10 +7,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ro.alexmamo.optimizerealtimedatabase.data.repository.ProductsRepositoryImpl
-import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductsRepository
-import ro.alexmamo.optimizerealtimedatabase.domain.use_case.GetProductById
-import ro.alexmamo.optimizerealtimedatabase.domain.use_case.GetProducts
+import ro.alexmamo.optimizerealtimedatabase.data.repository.ProductListRepositoryImpl
+import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductListRepository
+import ro.alexmamo.optimizerealtimedatabase.domain.use_case.GetProductDetails
+import ro.alexmamo.optimizerealtimedatabase.domain.use_case.GetProductList
 import ro.alexmamo.optimizerealtimedatabase.domain.use_case.UseCases
 
 @Module
@@ -20,15 +20,15 @@ class AppModule {
     fun provideFirebaseDatabaseReference() = Firebase.database.reference
 
     @Provides
-    fun provideProductsRepository(
+    fun provideProductListRepository(
         db: DatabaseReference
-    ): ProductsRepository = ProductsRepositoryImpl(db)
+    ): ProductListRepository = ProductListRepositoryImpl(db)
 
     @Provides
     fun provideUseCases(
-        repo: ProductsRepository
+        repo: ProductListRepository
     ) = UseCases(
-        getProducts = GetProducts(repo = repo),
-        getProductById = GetProductById(repo = repo)
+        getProductList = GetProductList(repo = repo),
+        getProductDetails = GetProductDetails(repo = repo)
     )
 }

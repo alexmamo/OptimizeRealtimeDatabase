@@ -7,7 +7,7 @@ import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
-import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductsRepository;
+import ro.alexmamo.optimizerealtimedatabase.domain.repository.ProductListRepository;
 import ro.alexmamo.optimizerealtimedatabase.domain.use_case.UseCases;
 
 @ScopeMetadata
@@ -24,10 +24,10 @@ import ro.alexmamo.optimizerealtimedatabase.domain.use_case.UseCases;
 public final class AppModule_ProvideUseCasesFactory implements Factory<UseCases> {
   private final AppModule module;
 
-  private final Provider<ProductsRepository> repoProvider;
+  private final Provider<ProductListRepository> repoProvider;
 
   public AppModule_ProvideUseCasesFactory(AppModule module,
-      Provider<ProductsRepository> repoProvider) {
+      Provider<ProductListRepository> repoProvider) {
     this.module = module;
     this.repoProvider = repoProvider;
   }
@@ -38,11 +38,11 @@ public final class AppModule_ProvideUseCasesFactory implements Factory<UseCases>
   }
 
   public static AppModule_ProvideUseCasesFactory create(AppModule module,
-      Provider<ProductsRepository> repoProvider) {
+      Provider<ProductListRepository> repoProvider) {
     return new AppModule_ProvideUseCasesFactory(module, repoProvider);
   }
 
-  public static UseCases provideUseCases(AppModule instance, ProductsRepository repo) {
+  public static UseCases provideUseCases(AppModule instance, ProductListRepository repo) {
     return Preconditions.checkNotNullFromProvides(instance.provideUseCases(repo));
   }
 }

@@ -8,8 +8,8 @@ import javax.annotation.processing.Generated;
  */
 @AggregatedDeps(
     components = "dagger.hilt.android.components.ActivityComponent",
-    entryPoints = "ro.alexmamo.optimizerealtimedatabase.presentation.MainActivity_GeneratedInjector"
+    entryPoints = "ro.alexmamo.optimizerealtimedatabase.presentation.ProductsActivity_GeneratedInjector"
 )
 @Generated("dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsGenerator")
-public class _ro_alexmamo_optimizerealtimedatabase_presentation_MainActivity_GeneratedInjector {
+public class _ro_alexmamo_optimizerealtimedatabase_presentation_ProductsActivity_GeneratedInjector {
 }

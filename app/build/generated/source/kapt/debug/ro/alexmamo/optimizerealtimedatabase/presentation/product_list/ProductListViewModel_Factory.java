@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.product_names;
+package ro.alexmamo.optimizerealtimedatabase.presentation.product_list;
 
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
@@ -19,23 +19,23 @@ import ro.alexmamo.optimizerealtimedatabase.domain.use_case.UseCases;
     "unchecked",
     "rawtypes"
 })
-public final class ProductNamesViewModel_Factory implements Factory<ProductNamesViewModel> {
+public final class ProductListViewModel_Factory implements Factory<ProductListViewModel> {
   private final Provider<UseCases> useCasesProvider;
 
-  public ProductNamesViewModel_Factory(Provider<UseCases> useCasesProvider) {
+  public ProductListViewModel_Factory(Provider<UseCases> useCasesProvider) {
     this.useCasesProvider = useCasesProvider;
   }
 
   @Override
-  public ProductNamesViewModel get() {
+  public ProductListViewModel get() {
     return newInstance(useCasesProvider.get());
   }
 
-  public static ProductNamesViewModel_Factory create(Provider<UseCases> useCasesProvider) {
-    return new ProductNamesViewModel_Factory(useCasesProvider);
+  public static ProductListViewModel_Factory create(Provider<UseCases> useCasesProvider) {
+    return new ProductListViewModel_Factory(useCasesProvider);
   }
 
-  public static ProductNamesViewModel newInstance(UseCases useCases) {
-    return new ProductNamesViewModel(useCases);
+  public static ProductListViewModel newInstance(UseCases useCases) {
+    return new ProductListViewModel(useCases);
   }
 }

@@ -28,10 +28,10 @@ import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.Product
 fun ProductDetailsContent(
     padding: PaddingValues,
     viewModel: ProductDetailsViewModel = hiltViewModel(),
-    productId: String,
+    productKey: String,
 ) {
     LaunchedEffect(Unit) {
-        viewModel.getProductById(productId)
+        viewModel.getProductDetails(productKey)
     }
 
     Box(
@@ -39,12 +39,15 @@ fun ProductDetailsContent(
             .fillMaxSize()
             .padding(padding)
     ) {
-        when(val productResponse = viewModel.productState.value) {
+        when(val productDetailsResponse = viewModel.productDetailsResponse) {
             is Loading -> ProgressBar()
             is Success -> Column(
-                modifier = Modifier.fillMaxSize().padding(top = 8.dp, start = 8.dp)
+                modifier = Modifier.fillMaxSize().padding(
+                    top = 8.dp,
+                    start = 8.dp
+                )
             ) {
-                productResponse.data.apply {
+                productDetailsResponse.data.apply {
                     name?.let {
                         Text(
                             text = "${NAME}: $name",
@@ -101,7 +104,7 @@ fun ProductDetailsContent(
                     }
                 }
             }
-            is Error -> Log.d(TAG, productResponse.message)
+            is Error -> Log.d(TAG, productDetailsResponse.message)
         }
     }
 }

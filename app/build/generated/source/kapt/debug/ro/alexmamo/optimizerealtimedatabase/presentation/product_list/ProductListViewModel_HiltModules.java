@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.product_names;
+package ro.alexmamo.optimizerealtimedatabase.presentation.product_list;
 
 import androidx.lifecycle.ViewModel;
 import dagger.Binds;
@@ -17,10 +17,10 @@ import javax.annotation.processing.Generated;
 
 @Generated("dagger.hilt.android.processor.internal.viewmodel.ViewModelProcessor")
 @OriginatingElement(
-    topLevelClass = ProductNamesViewModel.class
+    topLevelClass = ProductListViewModel.class
 )
-public final class ProductNamesViewModel_HiltModules {
-  private ProductNamesViewModel_HiltModules() {
+public final class ProductListViewModel_HiltModules {
+  private ProductListViewModel_HiltModules() {
   }
 
   @Module
@@ -31,9 +31,9 @@ public final class ProductNamesViewModel_HiltModules {
 
     @Binds
     @IntoMap
-    @StringKey("ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesViewModel")
+    @StringKey("ro.alexmamo.optimizerealtimedatabase.presentation.product_list.ProductListViewModel")
     @HiltViewModelMap
-    public abstract ViewModel binds(ProductNamesViewModel vm);
+    public abstract ViewModel binds(ProductListViewModel vm);
   }
 
   @Module
@@ -46,7 +46,7 @@ public final class ProductNamesViewModel_HiltModules {
     @IntoSet
     @HiltViewModelMap.KeySet
     public static String provide() {
-      return "ro.alexmamo.optimizerealtimedatabase.presentation.product_names.ProductNamesViewModel";
+      return "ro.alexmamo.optimizerealtimedatabase.presentation.product_list.ProductListViewModel";
     }
   }
 }

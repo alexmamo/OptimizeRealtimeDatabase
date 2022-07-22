@@ -1,4 +1,4 @@
-package ro.alexmamo.optimizerealtimedatabase.presentation.product_details
+package ro.alexmamo.optimizerealtimedatabase.presentation.product_list
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -9,20 +9,24 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Product
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Response
-import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.Loading
+import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.*
 import ro.alexmamo.optimizerealtimedatabase.domain.use_case.UseCases
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductDetailsViewModel @Inject constructor(
+class ProductListViewModel @Inject constructor(
     private val useCases: UseCases
 ): ViewModel() {
-    var productDetailsResponse by mutableStateOf<Response<Product>>(Loading)
+    var productListResponse by mutableStateOf<Response<List<Product>>>(Loading)
         private set
 
-    fun getProductDetails(productKey: String) = viewModelScope.launch {
-        useCases.getProductDetails(productKey).collect { response ->
-            productDetailsResponse = response
+    init {
+        getProductList()
+    }
+
+    private fun getProductList() = viewModelScope.launch {
+        useCases.getProductList().collect { response ->
+            productListResponse = response
         }
     }
 }
