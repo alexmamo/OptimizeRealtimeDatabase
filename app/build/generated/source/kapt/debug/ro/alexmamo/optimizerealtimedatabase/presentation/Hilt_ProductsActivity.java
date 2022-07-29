@@ -1,8 +1,8 @@
 package ro.alexmamo.optimizerealtimedatabase.presentation;
 
 import android.content.Context;
+import androidx.activity.ComponentActivity;
 import androidx.activity.contextaware.OnContextAvailableListener;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
@@ -16,7 +16,7 @@ import javax.annotation.processing.Generated;
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
 @Generated("dagger.hilt.android.processor.internal.androidentrypoint.ActivityGenerator")
-public abstract class Hilt_ProductsActivity extends AppCompatActivity implements GeneratedComponentManagerHolder {
+public abstract class Hilt_ProductsActivity extends ComponentActivity implements GeneratedComponentManagerHolder {
   private volatile ActivityComponentManager componentManager;
 
   private final Object componentManagerLock = new Object();
