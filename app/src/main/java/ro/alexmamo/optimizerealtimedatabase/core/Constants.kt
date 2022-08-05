@@ -19,6 +19,10 @@ object Constants {
     const val DEPTH = "depth"
     const val WEIGHT = "weight"
 
+    //Arguments
+    const val PRODUCT_KEY = "productKey"
+    const val NO_PRODUCT_KEY = ""
+
     //Measurement units
     const val CM = "cm"
     const val KG = "Kg"

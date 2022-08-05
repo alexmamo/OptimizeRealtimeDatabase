@@ -1,5 +1,6 @@
 package ro.alexmamo.optimizerealtimedatabase.data.repository
 
+import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
@@ -20,16 +21,12 @@ class ProductListRepositoryImpl @Inject constructor(
             emit(Loading)
             val products = mutableListOf<Product>()
             db.child(PRODUCT_NAMES).get().await().children.forEach { snapshot ->
-                products.add(
-                    Product(
-                        key = snapshot.key,
-                        name = snapshot.getValue(String::class.java)
-                    )
-                )
+                val product = snapshot.toProduct()
+                products.add(product)
             }
             emit(Success(products))
         } catch (e: Exception) {
-            emit(Error(e.message ?: e.toString()))
+            emit(Error(e))
         }
     }
 
@@ -42,7 +39,12 @@ class ProductListRepositoryImpl @Inject constructor(
                 emit(Success(product))
             }
         } catch (e: Exception) {
-            emit(Error(e.message ?: e.toString()))
+            emit(Error(e))
         }
     }
 }
+
+fun DataSnapshot.toProduct() = Product(
+    key = key,
+    name = getValue(String::class.java)
+)

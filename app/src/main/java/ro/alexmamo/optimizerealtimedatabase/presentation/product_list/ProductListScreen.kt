@@ -1,12 +1,11 @@
 package ro.alexmamo.optimizerealtimedatabase.presentation.product_list
 
-import android.util.Log
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import ro.alexmamo.optimizerealtimedatabase.components.ProgressBar
-import ro.alexmamo.optimizerealtimedatabase.core.Constants.TAG
+import ro.alexmamo.optimizerealtimedatabase.core.Utils.Companion.print
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Response.*
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_list.components.ProductListContent
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_list.components.ProductListTopBar
@@ -29,7 +28,7 @@ fun ProductListScreen(
                     productList = productListResponse.data,
                     navigateToProductDetails = navigateToProductDetails
                 )
-                is Error -> Log.d(TAG, productListResponse.message)
+                is Error -> print(productListResponse.e)
             }
         }
     )

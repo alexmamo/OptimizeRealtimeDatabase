@@ -8,6 +8,8 @@ import androidx.navigation.NavType.Companion.StringType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import ro.alexmamo.optimizerealtimedatabase.core.Constants.NO_PRODUCT_KEY
+import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_KEY
 import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductDetailsScreen
 import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductListScreen
 import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
@@ -32,14 +34,14 @@ fun NavGraph (
             )
         }
         composable(
-            route = "${ProductDetailsScreen.route}/{productKey}",
+            route = "${ProductDetailsScreen.route}/{$PRODUCT_KEY}",
             arguments = mutableStateListOf(
-                navArgument("productKey") {
+                navArgument(PRODUCT_KEY) {
                     type = StringType
                 }
             )
         ) { backStackEntry ->
-            val productKey = backStackEntry.arguments?.getString("productKey") ?: ""
+            val productKey = backStackEntry.arguments?.getString(PRODUCT_KEY) ?: NO_PRODUCT_KEY
             ProductDetailsScreen(
                 productKey = productKey,
                 navigateBack = {
