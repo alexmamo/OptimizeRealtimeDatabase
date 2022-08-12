@@ -16,7 +16,7 @@ import javax.inject.Singleton
 class ProductListRepositoryImpl @Inject constructor(
     private val db: DatabaseReference
 ): ProductListRepository {
-    override suspend fun getProductListFromRealtimeDatabase()  = flow {
+    override fun getProductListFromRealtimeDatabase()  = flow {
         try {
             emit(Loading)
             val products = mutableListOf<Product>()
@@ -30,7 +30,7 @@ class ProductListRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getProductDetailsFromRealtimeDatabase(productKey: String) = flow {
+    override fun getProductDetailsFromRealtimeDatabase(productKey: String) = flow {
         try {
             emit(Loading)
             val productKeyRef = db.child(PRODUCTS).child(productKey)

@@ -5,7 +5,7 @@ import ro.alexmamo.optimizerealtimedatabase.domain.model.Product
 import ro.alexmamo.optimizerealtimedatabase.domain.model.Response
 
 interface ProductListRepository {
-    suspend fun getProductListFromRealtimeDatabase(): Flow<Response<List<Product>>>
+    fun getProductListFromRealtimeDatabase(): Flow<Response<List<Product>>>
 
-    suspend fun getProductDetailsFromRealtimeDatabase(productKey: String): Flow<Response<Product>>
+    fun getProductDetailsFromRealtimeDatabase(productKey: String): Flow<Response<Product>>
 }
