@@ -8,12 +8,12 @@ import androidx.navigation.NavType.Companion.StringType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import ro.alexmamo.optimizerealtimedatabase.core.Constants.NO_PRODUCT_KEY
+import ro.alexmamo.optimizerealtimedatabase.core.Constants.NO_VALUE
 import ro.alexmamo.optimizerealtimedatabase.core.Constants.PRODUCT_KEY
-import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductListScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.product_details.ProductDetailsScreen
-import ro.alexmamo.optimizerealtimedatabase.presentation.product_list.ProductListScreen
+import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductScreen
+import ro.alexmamo.optimizerealtimedatabase.navigation.Screen.ProductsScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.product.ProductScreen
+import ro.alexmamo.optimizerealtimedatabase.presentation.products.ProductsScreen
 
 @Composable
 @ExperimentalMaterialApi
@@ -22,27 +22,27 @@ fun NavGraph (
 ) {
     NavHost(
         navController = navController,
-        startDestination = ProductListScreen.route
+        startDestination = ProductsScreen.route
     ) {
         composable(
-            route = ProductListScreen.route
+            route = ProductsScreen.route
         ) {
-            ProductListScreen(
-                navigateToProductDetails = { productKey ->
-                    navController.navigate("${ProductDetailsScreen.route}/${productKey}")
+            ProductsScreen(
+                navigateToProductScreen = { productKey ->
+                    navController.navigate("${ProductScreen.route}/${productKey}")
                 }
             )
         }
         composable(
-            route = "${ProductDetailsScreen.route}/{$PRODUCT_KEY}",
+            route = "${ProductScreen.route}/{$PRODUCT_KEY}",
             arguments = mutableStateListOf(
                 navArgument(PRODUCT_KEY) {
                     type = StringType
                 }
             )
         ) { backStackEntry ->
-            val productKey = backStackEntry.arguments?.getString(PRODUCT_KEY) ?: NO_PRODUCT_KEY
-            ProductDetailsScreen(
+            val productKey = backStackEntry.arguments?.getString(PRODUCT_KEY) ?: NO_VALUE
+            ProductScreen(
                 productKey = productKey,
                 navigateBack = {
                     navController.popBackStack()

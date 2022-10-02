@@ -21,13 +21,13 @@ object Constants {
 
     //Arguments
     const val PRODUCT_KEY = "productKey"
-    const val NO_PRODUCT_KEY = ""
+    const val NO_VALUE = ""
 
     //Measurement units
     const val CM = "cm"
     const val KG = "Kg"
 
     //Screens
-    const val PRODUCT_LIST_SCREEN = "Product List"
-    const val PRODUCT_DETAILS_SCREEN = "Product Details"
+    const val PRODUCTS_SCREEN = "Product List"
+    const val PRODUCT_SCREEN = "Product Details"
 }
